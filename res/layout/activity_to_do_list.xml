@@ -1,0 +1,19 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent" >
+	<EditText
+	    android:id="@+id/myEditText"
+	    android:layout_width="fill_parent"
+	    android:layout_height="wrap_content"
+	    android:text="New To Do Item" 
+	    />
+
+	<ListView
+	    android:id="@+id/myListView"
+	    android:layout_width="fill_parent"
+	    android:layout_height="wrap_content"
+	    android:layout_below="@+id/myEditText" />
+
+</LinearLayout>
