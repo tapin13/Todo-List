@@ -25,9 +25,9 @@ public class ToDoList extends Activity {
         final EditText myEditText = (EditText)findViewById(R.id.myEditText);
         
         final ArrayList<String> todoItems = new ArrayList<String>();
-        final ArrayAdapter<String> aa;
+        int resID = R.layout.todolist_item;
         
-        aa = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, todoItems);
+        final ArrayAdapter<String> aa = new ArrayAdapter<String>(this, resID, todoItems);
         
         myListView.setAdapter(aa);
         

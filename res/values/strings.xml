@@ -1,8 +1,10 @@
 <resources>
 
     <string name="app_name">Todo_List</string>
-    <string name="hello_world">Hello world!</string>
     <string name="menu_settings">Settings</string>
     <string name="title_activity_to_do_list">ToDoList</string>
-
+    <string name="add_new">Add New Item</string>
+    <string name="remove">Remove Item</string>
+    <string name="cancel">Cancel</string>
+    
 </resources>
