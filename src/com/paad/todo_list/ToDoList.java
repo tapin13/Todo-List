@@ -24,27 +24,23 @@ public class ToDoList extends Activity {
 	static final private int REMOVE_TODO = Menu.FIRST + 1;
 	
     private boolean addingNew = false;
-	private ArrayList<String> todoItems;
+	private ArrayList<ToDoItem> todoItems;
 	private ListView myListView;
 	private EditText myEditText;
-	private ArrayAdapter<String> aa;
+	private ToDoItemAdapter aa;
 	
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_to_do_list);
         
-        //ListView myListView = (ListView)findViewById(R.id.myListView);
         myListView = (ListView)findViewById(R.id.myListView);
-        //final EditText myEditText = (EditText)findViewById(R.id.myEditText);
         myEditText = (EditText)findViewById(R.id.myEditText);
         
-        //final ArrayList<String> todoItems = new ArrayList<String>();
-        todoItems = new ArrayList<String>();
+        todoItems = new ArrayList<ToDoItem>();
         int resID = R.layout.todolist_item;
         
-        //final ArrayAdapter<String> aa = new ArrayAdapter<String>(this, resID, todoItems);
-        aa = new ArrayAdapter<String>(this, resID, todoItems);
+        aa = new ToDoItemAdapter(this, resID, todoItems);
         
         myListView.setAdapter(aa);
         
@@ -52,7 +48,8 @@ public class ToDoList extends Activity {
         	public boolean onKey(View v, int keyCode, KeyEvent event) {
         		if(event.getAction() == KeyEvent.ACTION_DOWN)
         			if(keyCode == KeyEvent.KEYCODE_ENTER) {
-        				todoItems.add(0, myEditText.getText().toString());
+        				ToDoItem newItem = new ToDoItem(myEditText.getText().toString());
+        				todoItems.add(0, newItem);
         				aa.notifyDataSetChanged();
         				myEditText.setText("");
         				cancelAdd();
