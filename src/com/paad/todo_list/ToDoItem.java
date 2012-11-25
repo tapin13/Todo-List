@@ -3,9 +3,14 @@ package com.paad.todo_list;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
+import android.database.Cursor;
+import android.sax.StartElementListener;
+import android.text.style.UpdateAppearance;
+
 public class ToDoItem {
 	String task;
 	Date created;
+	Cursor toDoListCursor;
 	
 	public String getTask() {
 		return task;
